@@ -1,0 +1,22 @@
+pipeline{
+	agent{
+	label:'agent1'
+	}
+	
+	stages{
+		stage('s1'){
+		steps{
+		echo 'Step 1'
+		sleep 10
+		}
+		steps{
+		echo 'Step 2'
+		sleep 10
+		}
+		
+		}
+	
+	}
+
+}
+
