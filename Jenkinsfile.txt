@@ -2,15 +2,25 @@ pipeline{
 	agent any
 	
 	stages{
-		stage('s1'){
-		steps{
-		echo 'Step 1'
-		sleep 10
-		}
+		stage('Parallel runs'){
+		parallel{
 		
+		stage('one'){
 		
+			steps{
+			echo 'Step 1'
+			sleep 10
+			}
 		}
-	
+		stage('two'){
+		
+			steps{
+			echo 'Step 2'
+			sleep 10
+			}
+		}
+		}
+	}
 	}
 
 }
